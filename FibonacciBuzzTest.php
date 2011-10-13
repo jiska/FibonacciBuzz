@@ -39,8 +39,142 @@ class FibonacciBuzzTest extends PHPUnit_Framework_TestCase
      * 832040, 1346269, 2178309, 3524578, 5702887,
      * 9227465, 14930352, 24157817, 39088169 ...
      */
-    $expect = array(1, 1, 2, 'fizz', 'buzz');
+    $expect = array(1, 1, 2, 'Fizz', 'Buzz');
     $this->assertEquals($expect, FibonacciBuzz::FizzBuzz(5));
+  }
+
+  public function test_渡した引数の個数分Fibonacci数のarrayをつくる_引数が1()
+  {
+    $expect = array(1);
+    $this->assertEquals($expect, FibonacciBuzz::FizzBuzz(1));
+  }
+
+  public function test_渡した引数の個数分Fibonacci数のarrayをつくる_引数が2()
+  {
+    $expect = array(1, 1);
+    $this->assertEquals($expect, FibonacciBuzz::FizzBuzz(2));
+  }
+
+  public function test_渡した引数の個数分Fibonacci数のarrayをつくる_引数が100()
+  {
+    $expect = array(
+      1,
+      1,
+      2,
+      'Fizz',
+      'Buzz',
+      8,
+      13,
+      'Fizz',
+      34,
+      'Buzz',
+      89,
+      'Fizz',
+      233,
+      377,
+      'Buzz',
+      'Fizz',
+      1597,
+      2584,
+      4181,
+      'FizzBuzz',
+      10946,
+      17711,
+      28657,
+      'Fizz',
+      'Buzz',
+      121393,
+      196418,
+      'Fizz',
+      514229,
+      'Buzz',
+      1346269,
+      'Fizz',
+      3524578,
+      5702887,
+      'Buzz',
+      'Fizz',
+      24157817,
+      39088169,
+      63245986,
+      'FizzBuzz',
+      165580141,
+      267914296,
+      433494437,
+      'Fizz',
+      'Buzz',
+      1836311903,
+      2971215073,
+      'Fizz',
+      7778742049,
+      'Buzz',
+      20365011074,
+      'Fizz',
+      53316291173,
+      86267571272,
+      'Buzz',
+      'Fizz',
+      365435296162,
+      591286729879,
+      956722026041,
+      'FizzBuzz',
+      2504730781961,
+      4052739537881,
+      6557470319842,
+      'Fizz',
+      'Buzz',
+      27777890035288,
+      44945570212853,
+      'Fizz',
+      117669030460994,
+      'Buzz',
+      308061521170129,
+      'Fizz',
+      806515533049393,
+      1304969544928657,
+      'Buzz',
+      'Fizz',
+      5527939700884757,
+      8944394323791464,
+      14472334024676221,
+      'FizzBuzz',
+      37889062373143906,
+      61305790721611591,
+      99194853094755497,
+      'Fizz',
+      'Buzz',
+      420196140727489673,
+      679891637638612258,
+      'Fizz',
+      1779979416004714189,
+      'Buzz',
+      4660046610375530309,
+      'Fizz',
+      12200160415121876738,
+      19740274219868223167,
+      'Buzz',
+      'Fizz',
+      83621143489848422977,
+      135301852344706746049,
+      218922995834555169026,
+      'FizzBuzz',
+    );
+    $this->assertEquals($expect, FibonacciBuzz::FizzBuzz(100));
+  }
+
+  public function test_引数が0の場合は空のarrayをつくる()
+  {
+    $expect = array();
+    $this->assertEquals($expect, FibonacciBuzz::FizzBuzz(0));
+  }
+
+  public function test_引数が数値以外の場合は0を渡したとみなす()
+  {
+    $expect = array();
+    $this->assertEquals($expect, FibonacciBuzz::FizzBuzz('a'));
+    $this->assertEquals($expect, FibonacciBuzz::FizzBuzz('0x03'));
+    $this->assertEquals($expect, FibonacciBuzz::FizzBuzz("0x03"));
+    $this->assertEquals($expect, FibonacciBuzz::FizzBuzz("0x10"));
   }
 }
 
